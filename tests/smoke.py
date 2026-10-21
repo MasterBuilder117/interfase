@@ -15,6 +15,25 @@ for key in ['parques','markov','gradient','activation','logistic','montecarlo','
 assert "id:'earth-theorem'" in data and "id:'wobbly-table'" in data
 assert data.count('proofSteps:') == 2
 assert "viewModes:['2D','3D']" in data
+# Accessibility and responsive regressions found by independent review.
+assert 'aria-pressed="${!i}"' in js
+assert 'aria-describedby="viz-description"' in js
+assert 'aria-label="Visualización interactiva de ${esc(p.title)}"' in js
+assert "activeDraw?.()" in js
+assert 'const state={range:' in js
+assert 'const ROOT_EPS=1e-6' in js
+assert js.count('Math.abs(gap)<ROOT_EPS') == 3
+assert 'step="any"' in js
+# Mathematical scope: application/illustration, not a proof by animation.
+assert 'APLICACIÓN INTERACTIVA' in js
+assert 'antiperiodicidad' in data.lower()
+assert 'diagrama esquemático' in data.lower()
+assert 'const planeZ=' in js
+css=(root/'styles.css').read_text()
+assert "html[data-theme='light'] .card-meta{color:var(--muted)}" in css
+assert '.viz-controls label:has(input){flex:1 1 100%' in css
+readme=(root/'README.md').read_text()
+assert 'demostraciones interactivas' not in readme.lower()
 manifest=json.loads((root/'manifest.webmanifest').read_text())
 assert manifest['display']=='standalone' and len(manifest['icons'])==2
 print('smoke: ok — 8 proyectos, PWA y visualizadores presentes')
