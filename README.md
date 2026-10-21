@@ -2,6 +2,8 @@
 
 Portafolio/blog estático para reunir proyectos interactivos, visualizadores y sus fundamentos teóricos.
 
+Incluye ocho proyectos. Los módulos **Teorema de la Tierra** y **Mesa inestable** combinan vistas 2D/3D, controles sincronizados y demostraciones interactivas paso a paso, con las hipótesis y límites matemáticos expuestos en la interfaz.
+
 ## Ejecutar
 
 ```bash

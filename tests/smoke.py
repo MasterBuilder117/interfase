@@ -9,9 +9,12 @@ js=(root/'app.js').read_text()
 data=(root/'projects.js').read_text()
 assert '<main id="contenido">' in html and '<dialog' in html
 assert html.count('<section')>=5
-assert len(re.findall(r"id:'[^']+',index:'",data))==6
-for key in ['parques','markov','gradient','activation','logistic','montecarlo']:
+assert len(re.findall(r"id:'[^']+',index:'",data))==8
+for key in ['parques','markov','gradient','activation','logistic','montecarlo','earth','table']:
  assert key in js
+assert "id:'earth-theorem'" in data and "id:'wobbly-table'" in data
+assert data.count('proofSteps:') == 2
+assert "viewModes:['2D','3D']" in data
 manifest=json.loads((root/'manifest.webmanifest').read_text())
 assert manifest['display']=='standalone' and len(manifest['icons'])==2
-print('smoke: ok — 6 proyectos, PWA y visualizadores presentes')
+print('smoke: ok — 8 proyectos, PWA y visualizadores presentes')
