@@ -5,10 +5,11 @@ Portafolio/blog estático para reunir proyectos interactivos, visualizadores y s
 ## Ejecutar
 
 ```bash
+cd /home/gravemind/Documentos
 python3 -m http.server 4173
 ```
 
-Abrir `http://localhost:4173/`.
+Abrir `http://127.0.0.1:4173/laboratorio-visual/`. Servir desde `Documentos` también permite que la tarjeta de Parqués abra la aplicación real en `../parques/app/index.html`.
 
 ## Estructura
 
