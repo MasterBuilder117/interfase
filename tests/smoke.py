@@ -40,6 +40,10 @@ assert 'ANIMAR 0° → 90°' in js
 assert 'data-type="table" tabindex="0"' in js
 assert "external:'https://parques-lab.vercel.app'" in data
 assert 'earth-vector-description' in js and 'table-profile-description' in js
+# Tierra debe separar valores puntuales de diferencias antipodales; el promedio no demuestra igualdad.
+for token in ['Perfil puntual', 'Temperatura T(q)', 'Presión P(q)', 'Diferencia antipodal', 'Promediar ocultaría']:
+    assert token in js, f'Falta contrato visual de Tierra: {token}'
+assert 'drawEarthFieldPanel' in js
 assert 'const planeZ=' not in js
 assert 'activeStop?.()' in js
 assert 'aria-pressed="true" data-earth-layer' in js
@@ -51,6 +55,7 @@ assert '.table-panel{padding:16px;overflow:visible' in css
 assert "html[data-theme='light'] .card-meta{color:var(--muted)}" in css
 assert "--coral:#a63824" in css and "--muted:#565750" in css and "html[data-theme='dark']" in css
 assert '.viz-controls label:has(input){flex:1 1 100%' in css
+assert '.earth-workspace .viz-controls-sticky{position:relative}' in css
 # 2026 redesign: original atlas shell and rich domain visualizers.
 for token in ['atlas-rail','signal-strip','project-marquee','field-notes']:
  assert token in html, f'missing redesigned shell: {token}'
