@@ -40,10 +40,12 @@ assert 'ANIMAR 0° → 90°' in js
 assert 'data-type="table" tabindex="0"' in js
 assert "external:'https://parques-lab.vercel.app'" in data
 assert 'earth-vector-description' in js and 'table-profile-description' in js
-# Tierra debe separar valores puntuales de diferencias antipodales; el promedio no demuestra igualdad.
-for token in ['Perfil puntual', 'Temperatura T(q)', 'Presión P(q)', 'Diferencia antipodal', 'Promediar ocultaría']:
+# Tierra debe mostrar el par seleccionado y localizar coincidencias sin curvas paramétricas opacas.
+for token in ['Comparación del par seleccionado', 'Buscador de coincidencias', 'Cada punto del corredor', 'Temperatura T(p)', 'Presión P(p)', 'Promediar ocultaría']:
     assert token in js, f'Falta contrato visual de Tierra: {token}'
-assert 'drawEarthFieldPanel' in js
+assert 'drawEarthPairBars' in js and 'drawEarthCoincidenceStrip' in js
+assert 'const compact=w<360' in js
+assert 'map-scale">1000 km</div></div><div class="layer-dock"' in js
 assert 'const planeZ=' not in js
 assert 'activeStop?.()' in js
 assert 'aria-pressed="true" data-earth-layer' in js
