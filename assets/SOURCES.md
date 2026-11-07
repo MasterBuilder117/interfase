@@ -2,3 +2,4 @@
 
 - `earth-atmos-2048.jpg`: textura equirectangular terrestre obtenida de los ejemplos públicos de Three.js: <https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg>. Se usa únicamente como mapa base; las capas de temperatura y presión son campos matemáticos sintéticos generados por Interfase.
 - `parques-forja-infernal.svg`: copia local del tablero **Forja Infernal** del proyecto Parqués RL (`/home/gravemind/Documentos/parques/app/boards/infernal.svg`).
+- `fonts/*.woff2`: subconjuntos latin (y greek para JetBrains Mono) de **Newsreader** (Production Type), **Hanken Grotesk** (Alfredo Marco Pradil) y **JetBrains Mono** (JetBrains), descargados de Google Fonts. Licencia SIL Open Font License 1.1.
