@@ -71,11 +71,11 @@ for token in ['data-lab-action="roll"','data-lab-action="markov-step"','data-lab
 assert 'bindDirectManipulation' in js and 'lab-history' in js
 assert 'Interpolación bilineal continua' in js and 'diferencia finita' in js
 assert "bisectionState={lo:0,hi:Math.PI/2,step:0}" in js
-assert 'campo continuo sintético' in js
+assert 'NCEP/NCAR Reanalysis 1' in js and 'noaa-climatology.json' in js
 assert "cardImage:'assets/parques-forja-infernal.svg'" in data
 assert "earthImage.src='assets/earth-atmos-2048.jpg'" in js
 assert 'earth-scalar-plot' in js and 'earth-layer-explanation' in js
-assert 'Valores puntuales sintéticos' in js and 'no son promedios' in js
+assert 'no promedio del par' in js and 'climateAt(' in js
 assert 'viz-controls-sticky' in css
 assert 'Diagrama matemático' in js
 readme=(root/'README.md').read_text()
