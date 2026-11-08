@@ -1,7 +1,7 @@
 from pathlib import Path
 import json,re
 root=Path(__file__).resolve().parents[1]
-required=['index.html','styles.css','projects.js','app.js','sw.js','manifest.webmanifest','assets/icon.svg','assets/icon-192.png','assets/icon-512.png','assets/earth-atmos-2048.jpg','assets/parques-forja-infernal.svg']
+required=['index.html','styles.css','projects.js','lab-math.js','app.js','assets/data/noaa-climatology.json','sw.js','manifest.webmanifest','assets/icon.svg','assets/icon-192.png','assets/icon-512.png','assets/earth-atmos-2048.jpg','assets/parques-forja-infernal.svg']
 missing=[p for p in required if not (root/p).exists()]
 assert not missing,f'Missing: {missing}'
 html=(root/'index.html').read_text()
@@ -75,7 +75,7 @@ assert 'NCEP/NCAR Reanalysis 1' in js and 'noaa-climatology.json' in js
 assert "cardImage:'assets/parques-forja-infernal.svg'" in data
 assert "earthImage.src='assets/earth-atmos-2048.jpg'" in js
 assert 'earth-scalar-plot' in js and 'earth-layer-explanation' in js
-assert 'no promedio del par' in js and 'climateAt(' in js
+assert 'no promedio del par' in js and 'LabMath.findCoincidence' in js
 assert 'viz-controls-sticky' in css
 assert 'Diagrama matemático' in js
 readme=(root/'README.md').read_text()
