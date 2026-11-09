@@ -86,6 +86,11 @@ assert 'getBoundingClientRect(),dpr' not in js and '.width=r.width*dpr' not in j
 assert 'function teardown()' in js and "addEventListener('hashchange'" in js and 'WEBGL_lose_context' in js
 assert 'vt.ready.catch' in js and 'pressOutside' in js
 assert 'aria-pressed="true" data-filter="all"' in html
+# Self-contained: every instrument names its symbols and rule on screen, and the Earth explains the norm of D.
+assert data.count('reading:[')==8 and 'viz-reading' in js and 'CÓMO LEER EL INSTRUMENTO' in js
+assert '‖D‖ = √(ΔT² + ΔP²)' in data and '‖D‖ = √(ΔT² + ΔP²)' in js and 'earth-norm-note' in js
+assert 'h(θ' not in data, 'the table defect is f(θ) everywhere'
+assert 'field-key' in html and 'α, la tasa de aprendizaje' in html
 readme=(root/'README.md').read_text()
 assert 'demostraciones interactivas' not in readme.lower()
 manifest=json.loads((root/'manifest.webmanifest').read_text())
