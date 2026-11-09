@@ -241,7 +241,8 @@ void main(){vec2 q=(gl_FragCoord.xy-.5*uRes)/uR;float r2=dot(q,q);
  }
  if(type==='earth'){controls.innerHTML='<label>longitud <input id="earth-lon" type="range" min="-180" max="180" step="any" value="35"><output id="earth-lon-out">35.00°</output></label><label>latitud <input id="earth-lat" type="range" min="-90" max="90" step="any" value="20"><output id="earth-lat-out">20.00°</output></label><label>mes <select id="earth-month">'+MONTHS.map((m,i)=>`<option value="${i}"${i===12?' selected':''}>${m}</option>`).join('')+'</select></label><button type="button" id="earth-find">Buscar coincidencia</button>'}
  if(type==='table'){controls.innerHTML='<label>rotación <input id="table-angle" type="range" min="0" max="90" step="any" value="8"><output id="table-angle-out">8.00°</output></label><label>semilla <input id="table-seed" type="number" min="1" max="300" value="42"><output id="table-seed-out">42</output></label><label>complejidad <input id="table-complexity" type="range" min="2" max="10" step="1" value="5"><output id="table-complexity-out">5</output></label><button type="button" id="table-sweep-step">Girar +1°</button><button type="button" id="table-random-floor">Nuevo suelo</button><button type="button" id="table-find">Encontrar θ*</button>'}
- controls.classList.add('viz-controls-sticky');const controlAnchor=type==='earth'?$('.earth-map-shell'):type==='table'?$('.table-scene'):canvas;controlAnchor.insertAdjacentElement('beforebegin',controls);
+ // The controls stay in place and scroll with the page: as a sticky bar they covered the table, its camera buttons and the notes.
+ controls.classList.add('viz-controls-bar');const controlAnchor=type==='earth'?$('.earth-map-shell'):type==='table'?$('.table-scene'):canvas;controlAnchor.insertAdjacentElement('beforebegin',controls);
  function draw(){
   // late callbacks (image load, a frame already queued) can arrive after this instrument's markup was replaced
   if(!canvas.isConnected)return;

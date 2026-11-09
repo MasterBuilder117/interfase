@@ -57,7 +57,7 @@ assert '.table-panel{padding:16px;overflow:visible' in css
 assert "html[data-theme='light'] .card-meta{color:var(--muted)}" in css
 assert "--coral:#a63824" in css and "--muted:#565750" in css and "html[data-theme='dark']" in css
 assert '.viz-controls label:has(input){flex:1 1 100%' in css
-assert '.earth-workspace .viz-controls-sticky{position:relative}' in css
+assert '.viz-controls-bar{position:relative' in css and 'position:sticky;top:0;z-index:12' not in css, 'instrument controls must scroll with the page, not float over the table and its buttons'
 # 2026 redesign: original atlas shell and rich domain visualizers.
 for token in ['atlas-rail','signal-strip','project-marquee','field-notes']:
  assert token in html, f'missing redesigned shell: {token}'
@@ -76,7 +76,7 @@ assert "cardImage:'assets/parques-forja-infernal.svg'" in data
 assert "earthImage.src='assets/earth-atmos-2048.jpg'" in js
 assert 'earth-scalar-plot' in js and 'earth-layer-explanation' in js
 assert 'no promedio del par' in js and 'LabMath.findCoincidence' in js
-assert 'viz-controls-sticky' in css
+assert "controls.classList.add('viz-controls-bar')" in js
 assert 'Diagrama matemático' in js
 # Canvas bitmaps never feed back into layout: a card canvas re-fitted to its rounded box every frame grew without end.
 assert '.card-visual canvas{position:absolute;inset:0}' in css, 'card canvas back in flow: its bitmap would size the grid row'
