@@ -99,6 +99,10 @@ assert data.count('reading:[')==8 and 'viz-reading' in js and 'CÓMO LEER EL INS
 assert '‖D‖ = √(ΔT² + ΔP²)' in data and '‖D‖ = √(ΔT² + ΔP²)' in js and 'earth-norm-note' in js
 assert 'h(θ' not in data, 'the table defect is f(θ) everywhere'
 assert 'field-key' in html and 'α, la tasa de aprendizaje' in html
+# Never half old: the service worker revalidates every file, and a stale projects.js cannot abort a dialog.
+sw=(root/'sw.js').read_text()
+assert "fetch(r,{cache:'no-cache'})" in sw and "cache:'reload'" in sw
+assert "const esc=s=>String(s??'')" in js and "esc(p.proofTitle||" in js
 readme=(root/'README.md').read_text()
 assert 'demostraciones interactivas' not in readme.lower()
 manifest=json.loads((root/'manifest.webmanifest').read_text())
