@@ -27,6 +27,7 @@ button{transition:transform 120ms var(--ease-out)}
 button:active{transform:scale(.97)}
 .button:active{transform:scale(.97);box-shadow:0 0 0 var(--acid)}
 .card-open:active,.proof-player li button:active{transform:none}.hero-field{position:relative;min-height:530px}.hero-field svg{width:100%;height:100%;position:absolute;inset:0}.field-line{fill:none;stroke:var(--line);stroke-width:1}.field-line.b{stroke:var(--coral);stroke-width:2}.field-line.c{stroke-dasharray:4 8}.field-glow{fill:var(--cyan);opacity:.28}.field-point{fill:var(--acid);stroke:var(--on-acid);stroke-width:3}.field-point.secondary{fill:var(--violet)}.hero-field text{font:18px var(--serif);fill:var(--ink)}.field-caption{z-index:1;position:absolute;right:0;bottom:35px;width:260px;border-left:4px solid var(--acid);padding:10px 16px;background:var(--paper)}.field-caption b{display:block;font:20px var(--serif)}.field-caption span{font:12px/1.4 var(--mono);color:var(--muted)}
+.field-caption .field-key{display:block;margin-top:6px;font:11px/1.4 var(--mono);color:var(--muted)}
 .field-caption .field-readout{display:block;margin-top:6px;color:var(--ink);font-variant-numeric:tabular-nums;min-height:1.4em}
 .hero-field{min-width:0}
 .hero-canvas{position:absolute;inset:0;width:100%;max-width:100%;height:100%;display:block}
@@ -149,6 +150,17 @@ dialog[open]::backdrop{transition:opacity 220ms ease}
 .viz-controls button,.viz-controls select,.viz-controls input[type="number"]{min-height:44px;border:1px solid var(--lab-line-strong);background:var(--lab-surface);color:var(--lab-ink);padding:8px 11px;font:700 11px var(--mono);cursor:pointer}.theme-toggle,.nav-toggle,.filters button,.viz-modes button,.viz-controls input[type="range"],.search input{min-width:44px;min-height:44px}.viz-controls input[type="range"]{display:block}.viz-controls label{min-height:44px}.viz-controls button{transition:transform 120ms var(--ease-out),color 150ms ease,border-color 150ms ease}
 .viz-controls button:focus-visible{border-color:var(--acid);color:var(--acid)}
 @media(hover:hover) and (pointer:fine){.viz-controls button:hover{border-color:var(--acid);color:var(--acid)}}.lab-history{flex-basis:100%;min-height:28px;border-top:1px solid var(--lab-line);padding:9px 2px 0;color:var(--lab-muted);font:11px/1.5 var(--mono)}.visualizer:not(.earth-workspace):not(.table-workspace)>canvas{cursor:crosshair}
+/* Reading key: every symbol, colour and rule of an instrument, named in the dialog itself */
+.viz-reading{margin-top:28px;border-top:1px solid var(--line)}
+.viz-reading .eyebrow{margin:18px 0 8px}
+.viz-reading h3{margin:0 0 10px}
+.viz-reading dl{margin:0}
+.viz-reading dl>div{display:grid;grid-template-columns:minmax(110px,180px) minmax(0,1fr);gap:4px 20px;padding:10px 0;border-top:1px solid var(--line)}
+.viz-reading dt{font:700 12px/1.55 var(--mono);color:var(--ink)}
+.viz-reading dd{margin:0;color:var(--muted);font-size:14px;line-height:1.55;max-width:72ch}
+.earth-analysis .earth-norm-note{margin-top:6px;font:11px/1.45 var(--mono)}
+.earth-diagnostics .earth-plot-note{margin:6px 0 0;font:11px/1.45 var(--mono);color:var(--lab-muted)}
+@media(max-width:640px){.viz-reading dl>div{grid-template-columns:1fr}}
 @media(max-width:980px){body{padding-left:0}.atlas-rail{display:none}.site-header{grid-template-columns:1fr auto auto}.nav-toggle{display:block}
 .site-header{grid-template-columns:auto 1fr auto auto}
 .header-brand{display:flex}nav{display:none;position:absolute;top:70px;left:0;right:0;padding:22px;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column}nav.is-open{display:flex}.hero{grid-template-columns:1fr}.hero-field{min-height:430px}.project-grid{grid-template-columns:1fr}.project-card,.project-card.featured{grid-column:1;grid-template-columns:45% 55%;border-right:0}.theory-layout{grid-template-columns:1fr}.dialog-grid{grid-template-columns:minmax(0,1fr)}.dialog-side{border-left:0;border-top:1px solid var(--line)}.table-lab-shell{grid-template-columns:1fr;height:auto}.table-scene{height:440px;border-right:0}.table-panel{max-height:none}.field-notes{grid-template-columns:1fr}.field-notes article:nth-child(n){transform:none}.about-section{grid-template-columns:1fr}

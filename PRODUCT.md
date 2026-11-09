@@ -47,6 +47,7 @@ Visualizadores propios; textura terrestre de Three.js; tablero de Parqués RL (v
 
 - Intervenir antes que contemplar.
 - Declarar hipótesis y límites en la propia interfaz.
+- Autocontenida: cada símbolo, unidad, color y regla que aparece en pantalla se explica en la misma página.
 - El movimiento explica estado y relación; nunca es solo decoración.
 
 ## Accessibility & Inclusion

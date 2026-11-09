@@ -12,6 +12,8 @@ Atlas personal de matemáticas, sistemas e inteligencia artificial: ocho proyect
 - **Cadenas de Markov, Paisaje de gradiente, Atlas de activaciones, Mapa logístico y Monte Carlo:** visualizadores con manipulación directa.
 - **Constelación** de conceptos navegable con ruta de estudio, **Ideas que engañan** (errores frecuentes con su caso abierto en el instrumento) y **Cómo leer un proyecto**.
 
+La página es autocontenida: cada instrumento explica en pantalla sus símbolos, colores y regla («Cómo leer el instrumento»), y cada concepto de las tarjetas está definido dentro de su proyecto.
+
 Las escenas ilustran los argumentos; no sustituyen sus demostraciones ni son simulaciones físicas. Cada proyecto declara sus hipótesis y límites en la interfaz.
 
 ## Ejecutar en local
