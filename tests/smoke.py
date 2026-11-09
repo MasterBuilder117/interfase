@@ -78,6 +78,14 @@ assert 'earth-scalar-plot' in js and 'earth-layer-explanation' in js
 assert 'no promedio del par' in js and 'LabMath.findCoincidence' in js
 assert 'viz-controls-sticky' in css
 assert 'Diagrama matemático' in js
+# Canvas bitmaps never feed back into layout: a card canvas re-fitted to its rounded box every frame grew without end.
+assert '.card-visual canvas{position:absolute;inset:0}' in css, 'card canvas back in flow: its bitmap would size the grid row'
+assert 'function fitCanvas(' in js and 'canvas.clientWidth' in js
+assert 'getBoundingClientRect(),dpr' not in js and '.width=r.width*dpr' not in js, 'canvas sized from its own bounding rect'
+# Dialog lifecycle: every exit runs the same teardown, Back closes the project and WebGL is released.
+assert 'function teardown()' in js and "addEventListener('hashchange'" in js and 'WEBGL_lose_context' in js
+assert 'vt.ready.catch' in js and 'pressOutside' in js
+assert 'aria-pressed="true" data-filter="all"' in html
 readme=(root/'README.md').read_text()
 assert 'demostraciones interactivas' not in readme.lower()
 manifest=json.loads((root/'manifest.webmanifest').read_text())
