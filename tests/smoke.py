@@ -80,6 +80,11 @@ assert "controls.classList.add('viz-controls-bar')" in js
 # The sweep and the trajectories toggle live on the scene, where the animation is watched, not under the charts.
 assert js.index('id="table-play"')<js.index('<aside class="table-panel">') and js.index('id="table-trajectories"')<js.index('<aside class="table-panel">')
 assert 'table-scene-status' in js and "tableView.phase='bisect'" in js
+# Every chart explains itself where it is drawn: a visible note per table card and a key for the scene.
+assert js.count('<p class="card-note">')==6 and 'table-scene-key' in js and 'semilla <b>' in js
+assert 'c.moveTo(0,h*.42);c.lineTo(w,h*.42)' in js, 'the activation axis must sit at f = 0'
+# The step-by-step section says what it proves, ties each step to the instrument and can show it there.
+assert data.count('proofIntro:')==2 and 'data-proof-show' in js and 'Comparar tras un cuarto de vuelta' in data and 'π/2]' not in data
 assert 'Diagrama matemático' in js
 # Canvas bitmaps never feed back into layout: a card canvas re-fitted to its rounded box every frame grew without end.
 assert '.card-visual canvas{position:absolute;inset:0}' in css, 'card canvas back in flow: its bitmap would size the grid row'
