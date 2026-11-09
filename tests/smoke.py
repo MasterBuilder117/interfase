@@ -77,6 +77,9 @@ assert "earthImage.src='assets/earth-atmos-2048.jpg'" in js
 assert 'earth-scalar-plot' in js and 'earth-layer-explanation' in js
 assert 'no promedio del par' in js and 'LabMath.findCoincidence' in js
 assert "controls.classList.add('viz-controls-bar')" in js
+# The sweep and the trajectories toggle live on the scene, where the animation is watched, not under the charts.
+assert js.index('id="table-play"')<js.index('<aside class="table-panel">') and js.index('id="table-trajectories"')<js.index('<aside class="table-panel">')
+assert 'table-scene-status' in js and "tableView.phase='bisect'" in js
 assert 'Diagrama matemático' in js
 # Canvas bitmaps never feed back into layout: a card canvas re-fitted to its rounded box every frame grew without end.
 assert '.card-visual canvas{position:absolute;inset:0}' in css, 'card canvas back in flow: its bitmap would size the grid row'
